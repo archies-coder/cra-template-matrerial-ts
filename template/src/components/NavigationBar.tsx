@@ -1,9 +1,9 @@
 import React, { FunctionComponent } from 'react';
 import { Button, createStyles, Fade, Link, Menu, MenuItem, Theme, Typography } from '@material-ui/core';
 import { makeStyles } from "@material-ui/core/styles";
-import ExitToAppIcon from '@material-ui/icons/ExitToApp';
-import PersonIcon from '@material-ui/icons/Person';
-import NotificationsActiveIcon from '@material-ui/icons/NotificationsActive';
+// import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+// import PersonIcon from '@material-ui/icons/Person';
+// import NotificationsActiveIcon from '@material-ui/icons/NotificationsActive';
 import { Link as NavLink, Redirect, RouteComponentProps } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import { doLogout } from 'features/auth/AuthSlice';
@@ -82,17 +82,20 @@ const NavigationBar: FunctionComponent<Props> = (props) => {
         <Typography className={classes.root}>
             <Link variant="h6" color="textSecondary">
                 <NavLink to="/visitor" className={classes.navLink} onClick={() => dispatch(enableSaveButton())}>
-                    <ExitToAppIcon /> <span className={classes.navItem}>Check In</span>
+                    {/* <ExitToAppIcon />  */}
+                    <span className={classes.navItem}>Check In</span>
                 </NavLink>
             </Link>
             <Link variant="h6" color="textSecondary">
                 <NavLink to="/invites/visitor" className={classes.navLink}>
-                    <PersonIcon /> <span className={classes.navItem}>Invite</span>
+                    {/* <PersonIcon />  */}
+                    <span className={classes.navItem}>Invite</span>
                 </NavLink>
             </Link>
             <Link href="#" variant="h6" color="textSecondary">
                 <NavLink to="/notification" className={classes.navLink}>
-                    <NotificationsActiveIcon /> <span className={classes.navItem}>Notification</span>
+                    {/* <NotificationsActiveIcon />  */}
+                    <span className={classes.navItem}>Notification</span>
                 </NavLink>
             </Link>
             <Link href="#" variant="h5" color="textSecondary">
@@ -125,7 +128,7 @@ const NavigationBar: FunctionComponent<Props> = (props) => {
             >
                 <MenuItem onClick={handleLogout}>
                     <CustomMenuItem to="/logout">Logout</CustomMenuItem>
-                    </MenuItem>
+                </MenuItem>
             </Menu>
         </Typography>
     );

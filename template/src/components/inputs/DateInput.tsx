@@ -4,7 +4,6 @@ import { makeStyles, withStyles } from "@material-ui/core/styles";
 import { KeyboardDateTimePickerProps, MuiPickersUtilsProvider, KeyboardDateTimePicker, DatePicker, KeyboardDatePickerProps } from '@material-ui/pickers';
 import DateFnsUtils from '@date-io/date-fns';
 import TextInput from "components/inputs/TextInput";
-import { ExpandMore } from '@material-ui/icons';
 interface OwnProps {
     value: string;
     id?: string;

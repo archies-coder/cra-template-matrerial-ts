@@ -20,14 +20,14 @@ import {
     withStyles
 } from "@material-ui/core";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
-import {
-    FirstPage as FirstPageIcon,
-    KeyboardArrowLeft,
-    KeyboardArrowRight,
-    LastPage as LastPageIcon
-} from "@material-ui/icons";
-import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
-import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
+// import {
+//     FirstPage as FirstPageIcon,
+//     KeyboardArrowLeft,
+//     KeyboardArrowRight,
+//     LastPage as LastPageIcon
+// } from "@material-ui/icons";
+// import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
+// import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import { Skeleton } from '@material-ui/lab';
 
 interface IRowProps {
@@ -105,24 +105,24 @@ function TablePaginationActions(props: TablePaginationActionsProps) {
                 disabled={page === 0}
                 aria-label="first page"
             >
-                {theme.direction === 'rtl' ? <LastPageIcon /> : <FirstPageIcon />}
+                {/* {theme.direction === 'rtl' ? <LastPageIcon /> : <FirstPageIcon />} */}
             </IconButton>
             <IconButton onClick={handleBackButtonClick} disabled={page === 0} aria-label="previous page">
-                {theme.direction === 'rtl' ? <KeyboardArrowRight /> : <KeyboardArrowLeft />}
+                {/* {theme.direction === 'rtl' ? <KeyboardArrowRight /> : <KeyboardArrowLeft />} */}
             </IconButton>
             <IconButton
                 onClick={handleNextButtonClick}
                 disabled={page >= Math.ceil(count / rowsPerPage) - 1}
                 aria-label="next page"
             >
-                {theme.direction === 'rtl' ? <KeyboardArrowLeft /> : <KeyboardArrowRight />}
+                {/* {theme.direction === 'rtl' ? <KeyboardArrowLeft /> : <KeyboardArrowRight />} */}
             </IconButton>
             <IconButton
                 onClick={handleLastPageButtonClick}
                 disabled={page >= Math.ceil(count / rowsPerPage) - 1}
                 aria-label="last page"
             >
-                {theme.direction === 'rtl' ? <FirstPageIcon /> : <LastPageIcon />}
+                {/* {theme.direction === 'rtl' ? <FirstPageIcon /> : <LastPageIcon />} */}
             </IconButton>
         </div>
     );
@@ -371,7 +371,7 @@ export const TableWrapper: FunctionComponent<Props> = ({ config, ...props }) => 
     ) : (rowsPerPage > 0
         ? stableSort(rows, getComparator(order, orderBy)).slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
         : rows
-        )
+    )
     const body = <TableBody>
         {
             tableRows.map((row: any, i: number) => (
@@ -392,7 +392,7 @@ export const TableWrapper: FunctionComponent<Props> = ({ config, ...props }) => 
                             open={Boolean(menuId === (i + "-c"))}
                             onClose={handleClose}
                         >
-                            {menuOptions.filter(item => {  return item.hideMenu ? !item.hideMenu(row) : true }).map(({ item, key, callback }, i) => {
+                            {menuOptions.filter(item => { return item.hideMenu ? !item.hideMenu(row) : true }).map(({ item, key, callback }, i) => {
 
                                 return (
                                     <StyledMenuItem key={i} id={row[key] || row.id} onClick={(e) => {
@@ -421,7 +421,7 @@ export const TableWrapper: FunctionComponent<Props> = ({ config, ...props }) => 
                     }
                     <TableCell className={classes.cell} align="left">
                         <Button aria-controls="simple-menu" aria-haspopup="true">
-                            <MoreHorizIcon />
+                            {/* <MoreHorizIcon /> */}
                         </Button>
                     </TableCell>
                 </TableRow>

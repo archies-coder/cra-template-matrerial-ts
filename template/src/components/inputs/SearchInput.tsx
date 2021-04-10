@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
-import {Box, createStyles, fade, InputBase, InputBaseProps, Paper, Theme} from "@material-ui/core";
-import SearchIcon from "@material-ui/icons/Search";
-import {makeStyles} from "@material-ui/core/styles";
+import { Box, createStyles, fade, InputBase, InputBaseProps, Paper, Theme } from "@material-ui/core";
+// import SearchIcon from "@material-ui/icons/Search";
+import { makeStyles } from "@material-ui/core/styles";
 
 interface OwnProps extends React.HTMLAttributes<any> {
     placeholder: string;
@@ -69,26 +69,26 @@ const SearchInput: FunctionComponent<Props> = (props) => {
     const classes = useStyles(props)
 
     return (
-      <Box {...props}>
-          <div className={classes.inputContainer}>
-              <div className={classes.search}>
-                  <div className={classes.searchIcon}>
-                      <SearchIcon/>
-                  </div>
-                  <InputBase
-                  value={props.value}
-                  onChange={props.onChange}
-                      placeholder={props.placeholder}
-                      classes={{
-                          root: classes.inputRoot,
-                          input: classes.inputInput,
-                      }}
-                      inputProps={{'aria-label': 'search'}}
-                  />
-              </div>
-          </div>
-      </Box>
-  );
+        <Box {...props}>
+            <div className={classes.inputContainer}>
+                <div className={classes.search}>
+                    <div className={classes.searchIcon}>
+                        {/* <SearchIcon/> */}
+                    </div>
+                    <InputBase
+                        value={props.value}
+                        onChange={props.onChange}
+                        placeholder={props.placeholder}
+                        classes={{
+                            root: classes.inputRoot,
+                            input: classes.inputInput,
+                        }}
+                        inputProps={{ 'aria-label': 'search' }}
+                    />
+                </div>
+            </div>
+        </Box>
+    );
 };
 
 export default SearchInput;
