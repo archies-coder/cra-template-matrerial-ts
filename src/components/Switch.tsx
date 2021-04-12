@@ -1,11 +1,8 @@
-import React from 'react';
-import { withStyles, Theme, createStyles } from '@material-ui/core/styles';
 import { purple } from '@material-ui/core/colors';
-import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
+import { createStyles, Theme, withStyles } from '@material-ui/core/styles';
 import Switch, { SwitchClassKey, SwitchProps } from '@material-ui/core/Switch';
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
+import React from 'react';
 
 interface Styles extends Partial<Record<SwitchClassKey, string>> {
   focusVisible?: string;
@@ -13,7 +10,7 @@ interface Styles extends Partial<Record<SwitchClassKey, string>> {
 
 interface Props extends SwitchProps {
   classes: Styles;
-  lable?:string;
+  lable?: string;
 }
 
 const PurpleSwitch = withStyles({
@@ -121,25 +118,25 @@ const AntSwitch = withStyles((theme: Theme) =>
   }),
 )(Switch);
 //@ts-ignore
-export default function CustomizedSwitch({label,checked,onChange,style}) {
+export default function CustomizedSwitch({ label, checked, onChange, style }) {
   const [state, setState] = React.useState({
     checkedA: true,
     checkedB: true,
     checkedC: true,
   });
 
-  const handleChange1 = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange1 = (event: React.ChangeEvent<HTMLInputElement>): any => {
     setState({ ...state, [event.target.name]: event.target.checked });
   };
 
   return (
-    
-      <FormControlLabel
-        style = {style}
-        control={<IOSSwitch checked={checked} onChange={onChange} name="checked" />}
-        label={label}
-        labelPlacement="end"
-      />
-      
+
+    <FormControlLabel
+      style={style}
+      control={<IOSSwitch checked={checked} onChange={onChange} name="checked" />}
+      label={label}
+      labelPlacement="end"
+    />
+
   );
 }
