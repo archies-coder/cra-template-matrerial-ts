@@ -1,1 +1,1 @@
-export default url = 'url'
+export const url = 'url'
