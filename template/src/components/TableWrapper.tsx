@@ -1,4 +1,3 @@
-import React, { FunctionComponent, useState } from 'react';
 import {
     Box,
     Button,
@@ -29,6 +28,7 @@ import { makeStyles, useTheme } from "@material-ui/core/styles";
 // import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 // import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import { Skeleton } from '@material-ui/lab';
+import React, { FunctionComponent, useState } from 'react';
 
 interface IRowProps {
     [id: string]: any;
@@ -60,7 +60,7 @@ interface IConfigObject {
     cellOptions?: ITableCellProps;
     isLoading?: boolean;
     pagination?: boolean;
-    pageChange?: Function;
+    pageChange?: () => any;
     totalCount?: number
 }
 

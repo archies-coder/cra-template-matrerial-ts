@@ -1,13 +1,11 @@
+import { Box } from "@material-ui/core";
+import { format, subDays } from 'date-fns';
 import React, { FunctionComponent } from 'react';
 import { Line } from 'react-chartjs-2';
-import { Box, Paper, Theme } from "@material-ui/core";
-import { addDays, format, subDays } from 'date-fns';
 
 
+export const MyChart2: FunctionComponent<any> = ({ visitorStats }) => {
 
-
-export const MyChart2: FunctionComponent<any> = ({visitorStats}) => {
-  
   const data = {
     datasets: [
       {
@@ -49,10 +47,10 @@ export const MyChart2: FunctionComponent<any> = ({visitorStats}) => {
     },
     layout: {
       padding: {
-          left: 20,
-          right: 20,
-          top: 20,
-          bottom: 0
+        left: 20,
+        right: 20,
+        top: 20,
+        bottom: 0
       }
     },
     scales: {
@@ -60,9 +58,9 @@ export const MyChart2: FunctionComponent<any> = ({visitorStats}) => {
         display: false,
         //fontSize: 100
       },
-      ticks:{
-        fontSize:18.75,
-        lineHeight:5,
+      ticks: {
+        fontSize: 18.75,
+        lineHeight: 5,
         fontStyle: 'bold'
       },
       yAxes: [{
@@ -75,22 +73,22 @@ export const MyChart2: FunctionComponent<any> = ({visitorStats}) => {
         },
       }],
       xAxes: [{
-        display:true,
+        display: true,
         gridLines: {
           display: false
         },
-        labels: [format(subDays(new Date(), 0), 'MMM dd'),format(subDays(new Date(), 1), 'dd'),format(subDays(new Date(), 2), 'dd'),format(subDays(new Date(), 3), 'dd'),format(subDays(new Date(), 4), 'dd')],
+        labels: [format(subDays(new Date(), 0), 'MMM dd'), format(subDays(new Date(), 1), 'dd'), format(subDays(new Date(), 2), 'dd'), format(subDays(new Date(), 3), 'dd'), format(subDays(new Date(), 4), 'dd')],
         scaleLabel: {
           display: false,
           lineHeight: 2
         },
-        ticks:{
-          fontSize:18.25,
+        ticks: {
+          fontSize: 18.25,
           fontColor: '#192949',//'rgb(255, 99, 132)',
           //fontFamily: ''
-          padding:20,
-          lineHeight:1,
-          maxRotation:0,
+          padding: 20,
+          lineHeight: 1,
+          maxRotation: 0,
           fontStyle: 'bold'
         }
       }]
@@ -100,7 +98,7 @@ export const MyChart2: FunctionComponent<any> = ({visitorStats}) => {
     <Box>
       <Line data={data} options={options} />
     </Box>
-    
+
   )
 }
 

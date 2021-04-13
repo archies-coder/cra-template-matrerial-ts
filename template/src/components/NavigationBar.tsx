@@ -1,15 +1,15 @@
-import React, { FunctionComponent } from 'react';
-import { Button, createStyles, Fade, Link, Menu, MenuItem, Theme, Typography } from '@material-ui/core';
+import { createStyles, Fade, Link, Menu, MenuItem, Theme, Typography } from '@material-ui/core';
 import { makeStyles } from "@material-ui/core/styles";
+import { RootState } from 'app/rootReducer';
+import { doLogout } from 'features/auth/AuthSlice';
+import { enableSaveButton } from 'features/Home/visitorSlice';
+import React, { FunctionComponent } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 // import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 // import PersonIcon from '@material-ui/icons/Person';
 // import NotificationsActiveIcon from '@material-ui/icons/NotificationsActive';
-import { Link as NavLink, Redirect, RouteComponentProps } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux';
-import { doLogout } from 'features/auth/AuthSlice';
-import { RootState } from 'app/rootReducer';
+import { Link as NavLink } from 'react-router-dom';
 import { CustomMenuItem } from './CustomMenuItem';
-import { enableSaveButton } from 'features/Home/visitorSlice';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
